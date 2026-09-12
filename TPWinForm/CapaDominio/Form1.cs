@@ -25,6 +25,21 @@ namespace WinformApp
             dgvArticulos.DataSource = negocio.listar();
             // negocio.listar va a la DB y devuelve una lista de datos
             // DataSource recibe esos datos y los modela en la tabla
+            dgvArticulos.Columns["IdMarca"].Visible = false;      //No quiero que muestre estos IDs
+            dgvArticulos.Columns["IdCategoria"].Visible = false;
         }
+
+        private void cargarImagen(string imagen)
+        {
+            try
+            {
+                pBoxImagenArticulo.Load(imagen);
+            }
+            catch (Exception ex)
+            {
+                pBoxImagenArticulo.Load("https://efectocolibri.com/wp-content/uploads/2021/01/placeholder.png");
+            }
+        }
+
     }
 }
