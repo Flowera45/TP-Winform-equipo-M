@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CapaDominio
 {
-    internal class ImagenNegocio
+    public class ImagenNegocio
     {
         public List<Imagen> listar()
         {
@@ -27,6 +27,7 @@ namespace CapaDominio
                 conexion.ConnectionString = "server=.\\SQLEXPRESS; database=CATALOGO_P3_DB; integrated security=true";
                 comando.CommandType = System.Data.CommandType.Text;
                 comando.CommandText = "Select IdArticulo, ImagenUrl from IMAGENES";
+                comando.Connection = conexion;
 
                 conexion.Open();
                 lector = comando.ExecuteReader();
