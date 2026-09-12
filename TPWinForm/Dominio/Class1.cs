@@ -4,12 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CapaDominio
+namespace Dominio
 {
-    public class Categoria
+    public class Class1
     {
-        public int Id { get; set; }
-        public string Descripcion { get; set; }
     }
 }
-

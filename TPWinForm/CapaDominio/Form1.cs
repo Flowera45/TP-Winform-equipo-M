@@ -7,8 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Dominio;
+using Negocio;
 
-namespace CapaDominio
+namespace WinformApp
 {
     public partial class Form1 : Form
     {

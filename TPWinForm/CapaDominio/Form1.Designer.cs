@@ -1,4 +1,4 @@
-﻿namespace CapaDominio
+﻿namespace WinformApp
 {
     partial class Form1
     {

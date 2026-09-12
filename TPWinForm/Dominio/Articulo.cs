@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CapaDominio
+namespace Dominio
 {
     public class Articulo
     {

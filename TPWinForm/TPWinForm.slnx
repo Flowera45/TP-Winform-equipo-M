@@ -1,3 +1,5 @@
 <Solution>
-  <Project Path="CapaDominio/CapaDominio.csproj" Id="0797af4a-d078-4d7d-86f1-8c24c276d35d" />
+  <Project Path="CapaDominio/WinformApp.csproj" Id="0797af4a-d078-4d7d-86f1-8c24c276d35d" />
+  <Project Path="Dominio/Dominio.csproj" Id="eaab5eda-f4b8-46db-ab19-66b38e1a60d6" />
+  <Project Path="Negocio/Negocio.csproj" Id="da0ff278-f3c6-4fab-ae18-11451524fafb" />
 </Solution>
