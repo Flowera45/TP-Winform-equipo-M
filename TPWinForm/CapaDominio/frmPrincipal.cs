@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Negocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,6 +18,17 @@ namespace WinformApp
             InitializeComponent();
         }
 
-    
+        private void mostrarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmArticuloMostrar1 ventana = new frmArticuloMostrar1();
+            ventana.ShowDialog();
+        }
+
+        private void agregarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmArticuloAgregar ventana = new frmArticuloAgregar();
+
+            ventana.ShowDialog();
+        }
     }
 }

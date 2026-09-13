@@ -1,6 +1,6 @@
 ﻿namespace WinformApp
 {
-    partial class frmArticulo
+    partial class frmArticuloAgregar
     {
         /// <summary>
         /// Required designer variable.

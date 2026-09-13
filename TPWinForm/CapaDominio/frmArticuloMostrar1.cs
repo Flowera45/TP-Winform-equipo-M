@@ -13,10 +13,10 @@ using System.Windows.Forms;
 
 namespace WinformApp
 {
-    public partial class Form1 : Form
+    public partial class frmArticuloMostrar1 : Form
     {
         private List<Imagen> listaImagen;
-        public Form1()
+        public frmArticuloMostrar1()
         {
             InitializeComponent();
         }
@@ -115,7 +115,7 @@ namespace WinformApp
 
 
 
-        private void btnAgregar_Click(object sender, EventArgs e)
+        /*private void btnAgregar_Click(object sender, EventArgs e)
         {
             frmArticulo ventana = new frmArticulo();
 
@@ -129,6 +129,6 @@ namespace WinformApp
                 dgvArticulos.Columns["IdMarca"].Visible = false;
                 dgvArticulos.Columns["IdCategoria"].Visible = false;
             }
-        }
+        }*/
     }
 }

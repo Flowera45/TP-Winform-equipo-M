@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace WinformApp
 {
-    public partial class frmArticulo : Form
+    public partial class frmArticuloAgregar : Form
     {
-        public frmArticulo()
+        public frmArticuloAgregar()
         {
             InitializeComponent();
         }
