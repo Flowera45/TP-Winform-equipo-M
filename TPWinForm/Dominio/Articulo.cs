@@ -14,22 +14,22 @@ namespace Dominio
         public string Descripcion { get; set; }
         public int IdMarca { get; set; }
         public int IdCategoria { get; set; }
-        public decimal Precio { get; set; }
-
-        /*
-        // Asociaciones con otras clases del dominio
         public Marca Marca { get; set; }
         public Categoria Categoria { get; set; }
 
-        // Lista dinámica para soportar múltiples imágenes sin límite
-        public List<Imagen> Imagenes { get; set; }
+        public decimal Precio { get; set; }
+    } 
+}
+
+        
+        /* Lista dinámica para soportar múltiples imágenes sin límite
+       // public List<Imagen> Imagenes { get; set; }
 
         // Constructor para inicializar la lista y evitar errores de referencia nula
-        public Articulo()
+       // public Articulo()
         {
             Imagenes = new List<Imagen>();
         }
         */
-    }
-}
+
 

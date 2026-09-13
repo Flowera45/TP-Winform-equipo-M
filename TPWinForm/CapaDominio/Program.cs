@@ -11,7 +11,7 @@ namespace WinformApp
     internal static class Program
     {
         /// <summary>
-        /// Punto de entrada principal para la aplicación.
+        /// Punto de entrada principal para la aplicación.GH
         /// </summary>
         [STAThread]
         static void Main()
