@@ -1,5 +1,4 @@
-﻿using CapaDominio;
-using Dominio;
+﻿using Dominio;
 using Negocio;
 using System;
 using System.Collections.Generic;
@@ -111,6 +110,24 @@ namespace WinformApp
             {
                 // Si la URL no funciona, no responde a tiempo (Timeout) o se cancela, 
                 // la aplicación no se congela y mantiene el placeholder cargado en el paso 1.
+            }
+        }
+
+
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            frmArticulo ventana = new frmArticulo();
+
+            if (ventana.ShowDialog() == DialogResult.OK)
+            {
+                ArticuloNegocio negocio = new ArticuloNegocio();
+
+                dgvArticulos.DataSource = null;
+                dgvArticulos.DataSource = negocio.listar();
+
+                dgvArticulos.Columns["IdMarca"].Visible = false;
+                dgvArticulos.Columns["IdCategoria"].Visible = false;
             }
         }
     }
