@@ -39,15 +39,15 @@
             this.dgvArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvArticulos.Location = new System.Drawing.Point(12, 12);
             this.dgvArticulos.Name = "dgvArticulos";
-            this.dgvArticulos.Size = new System.Drawing.Size(684, 317);
+            this.dgvArticulos.Size = new System.Drawing.Size(755, 317);
             this.dgvArticulos.TabIndex = 0;
             this.dgvArticulos.SelectionChanged += new System.EventHandler(this.dgvArticulos_SelectionChanged);
             // 
             // pBoxImagenArticulo
             // 
-            this.pBoxImagenArticulo.Location = new System.Drawing.Point(711, 12);
+            this.pBoxImagenArticulo.Location = new System.Drawing.Point(773, 12);
             this.pBoxImagenArticulo.Name = "pBoxImagenArticulo";
-            this.pBoxImagenArticulo.Size = new System.Drawing.Size(334, 317);
+            this.pBoxImagenArticulo.Size = new System.Drawing.Size(300, 241);
             this.pBoxImagenArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pBoxImagenArticulo.TabIndex = 1;
             this.pBoxImagenArticulo.TabStop = false;
