@@ -1,6 +1,6 @@
 ﻿namespace WinformApp
 {
-    partial class frmArticuloMostrar1
+    partial class frmArticuloMostrar
     {
         /// <summary>
         /// Variable del diseñador necesaria.

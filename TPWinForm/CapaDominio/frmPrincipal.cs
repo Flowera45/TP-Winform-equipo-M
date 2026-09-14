@@ -20,7 +20,7 @@ namespace WinformApp
 
         private void mostrarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmArticuloMostrar1 ventana = new frmArticuloMostrar1();
+            frmArticuloMostrar ventana = new frmArticuloMostrar();
             ventana.ShowDialog();
         }
 

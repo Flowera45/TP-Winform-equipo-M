@@ -13,10 +13,10 @@ using System.Windows.Forms;
 
 namespace WinformApp
 {
-    public partial class frmArticuloMostrar1 : Form
+    public partial class frmArticuloMostrar : Form
     {
         private List<Imagen> listaImagen;
-        public frmArticuloMostrar1()
+        public frmArticuloMostrar()
         {
             InitializeComponent();
         }
