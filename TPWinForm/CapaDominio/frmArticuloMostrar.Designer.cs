@@ -52,15 +52,15 @@
             this.pBoxImagenArticulo.TabIndex = 1;
             this.pBoxImagenArticulo.TabStop = false;
             // 
-            // frmArticuloMostrar1
+            // frmArticuloMostrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1071, 450);
             this.Controls.Add(this.pBoxImagenArticulo);
             this.Controls.Add(this.dgvArticulos);
-            this.Name = "frmArticuloMostrar1";
-            this.Text = "Form1";
+            this.Name = "frmArticuloMostrar";
+            this.Text = "Artículos";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBoxImagenArticulo)).EndInit();

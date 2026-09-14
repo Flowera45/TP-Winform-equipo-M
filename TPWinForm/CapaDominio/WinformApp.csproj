@@ -48,17 +48,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmArticuloMostrar1.cs">
+    <Compile Include="frmArticuloMostrar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmArticuloMostrar1.Designer.cs">
-      <DependentUpon>frmArticuloMostrar1.cs</DependentUpon>
+    <Compile Include="frmArticuloMostrar.Designer.cs">
+      <DependentUpon>frmArticuloMostrar.cs</DependentUpon>
     </Compile>
     <Compile Include="frmArticuloAgregar.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmArticuloAgregar.Designer.cs">
       <DependentUpon>frmArticuloAgregar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCategoriaMostrar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCategoriaMostrar.Designer.cs">
+      <DependentUpon>frmCategoriaMostrar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMarcaMostrar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMarcaMostrar.Designer.cs">
+      <DependentUpon>frmMarcaMostrar.cs</DependentUpon>
     </Compile>
     <Compile Include="frmPrincipal.cs">
       <SubType>Form</SubType>
@@ -68,11 +80,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmArticuloMostrar1.resx">
-      <DependentUpon>frmArticuloMostrar1.cs</DependentUpon>
+    <EmbeddedResource Include="frmArticuloMostrar.resx">
+      <DependentUpon>frmArticuloMostrar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmArticuloAgregar.resx">
       <DependentUpon>frmArticuloAgregar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCategoriaMostrar.resx">
+      <DependentUpon>frmCategoriaMostrar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMarcaMostrar.resx">
+      <DependentUpon>frmMarcaMostrar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>

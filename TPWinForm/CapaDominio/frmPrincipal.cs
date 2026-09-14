@@ -17,7 +17,7 @@ namespace WinformApp
         {
             InitializeComponent();
         }
-
+        //ARTíCULO
         private void mostrarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmArticuloMostrar ventana = new frmArticuloMostrar();
@@ -30,5 +30,19 @@ namespace WinformApp
 
             ventana.ShowDialog();
         }
+        //CATEGORÍA
+        private void mostrarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmCategoriaMostrar ventana = new frmCategoriaMostrar();
+            ventana.ShowDialog();   
+        }
+
+        //MARCA
+        private void mostrarToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            frmMarcaMostrar ventana = new frmMarcaMostrar();
+            ventana.ShowDialog();
+        }
+
     }
 }
