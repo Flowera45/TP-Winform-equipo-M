@@ -1,6 +1,6 @@
 ﻿namespace WinformApp
 {
-    partial class frmArticulo
+    partial class frmArticuloAgregar
     {
         /// <summary>
         /// Required designer variable.
@@ -58,7 +58,7 @@
             // 
             this.txtCodigo.Location = new System.Drawing.Point(86, 33);
             this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(100, 20);
+            this.txtCodigo.Size = new System.Drawing.Size(121, 20);
             this.txtCodigo.TabIndex = 1;
             this.txtCodigo.Click += new System.EventHandler(this.txtCodigo_Click);
             // 
@@ -116,7 +116,7 @@
             // 
             this.txtPrecio.Location = new System.Drawing.Point(86, 137);
             this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(100, 20);
+            this.txtPrecio.Size = new System.Drawing.Size(121, 20);
             this.txtPrecio.TabIndex = 7;
             this.txtPrecio.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
@@ -124,7 +124,7 @@
             // 
             this.txtDescripcion.Location = new System.Drawing.Point(86, 103);
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(100, 20);
+            this.txtDescripcion.Size = new System.Drawing.Size(121, 20);
             this.txtDescripcion.TabIndex = 8;
             this.txtDescripcion.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
@@ -132,7 +132,7 @@
             // 
             this.txtNombre.Location = new System.Drawing.Point(86, 69);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(100, 20);
+            this.txtNombre.Size = new System.Drawing.Size(121, 20);
             this.txtNombre.TabIndex = 11;
             // 
             // cboMarca
@@ -163,18 +163,18 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(111, 255);
+            this.btnCancelar.Location = new System.Drawing.Point(132, 255);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 15;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             // 
-            // frmArticulo
+            // frmArticuloAgregar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(230, 450);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.cboCategoria);
@@ -189,8 +189,8 @@
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.lblCodigo);
-            this.Name = "frmArticulo";
-            this.Text = "frmArticulo";
+            this.Name = "frmArticuloAgregar";
+            this.Text = "Agregar artículo";
             this.Load += new System.EventHandler(this.frmArticulo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
