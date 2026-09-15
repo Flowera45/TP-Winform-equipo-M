@@ -138,6 +138,7 @@
             this.agregarToolStripMenuItem1.Name = "agregarToolStripMenuItem1";
             this.agregarToolStripMenuItem1.Size = new System.Drawing.Size(189, 34);
             this.agregarToolStripMenuItem1.Text = "Agregar";
+            this.agregarToolStripMenuItem1.Click += new System.EventHandler(this.agregarToolStripMenuItem1_Click);
             // 
             // modificarToolStripMenuItem1
             // 

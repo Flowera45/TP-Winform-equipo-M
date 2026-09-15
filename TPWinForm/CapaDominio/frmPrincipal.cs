@@ -37,6 +37,12 @@ namespace WinformApp
             ventana.ShowDialog();
         }
 
+        private void agregarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmCategoriaAgregar ventana = new frmCategoriaAgregar();
+            ventana.ShowDialog();
+        }
+
         //MARCA
         private void mostrarToolStripMenuItem2_Click(object sender, EventArgs e)
         {
