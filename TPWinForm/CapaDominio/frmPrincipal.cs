@@ -34,7 +34,7 @@ namespace WinformApp
         private void mostrarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             frmCategoriaMostrar ventana = new frmCategoriaMostrar();
-            ventana.ShowDialog();   
+            ventana.ShowDialog();
         }
 
         //MARCA
@@ -44,5 +44,12 @@ namespace WinformApp
             ventana.ShowDialog();
         }
 
+        private void agregarToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            frmMarcaAgregar ventana = new frmMarcaAgregar();
+            ventana.ShowDialog();
+
+        }
     }
+
 }
