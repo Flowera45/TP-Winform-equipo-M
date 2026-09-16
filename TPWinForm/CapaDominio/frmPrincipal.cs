@@ -49,6 +49,12 @@ namespace WinformApp
             ventana.ShowDialog();
         }
 
+        private void eliminarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmCategoriaEliminar ventana = new frmCategoriaEliminar();
+            ventana.ShowDialog();
+        }
+
         //MARCA
         private void mostrarToolStripMenuItem2_Click(object sender, EventArgs e)
         {
@@ -66,6 +72,12 @@ namespace WinformApp
         private void modicarToolStripMenuItem2_Click(object sender, EventArgs e)
         {
             frmMarcaModificar ventana = new frmMarcaModificar();
+            ventana.ShowDialog();
+        }
+
+        private void eliminarToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            frmMarcaEliminar ventana = new frmMarcaEliminar();
             ventana.ShowDialog();
         }
 

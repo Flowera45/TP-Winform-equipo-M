@@ -152,6 +152,7 @@
             this.eliminarToolStripMenuItem1.Name = "eliminarToolStripMenuItem1";
             this.eliminarToolStripMenuItem1.Size = new System.Drawing.Size(189, 34);
             this.eliminarToolStripMenuItem1.Text = "Eliminar";
+            this.eliminarToolStripMenuItem1.Click += new System.EventHandler(this.eliminarToolStripMenuItem1_Click);
             // 
             // marcasToolStripMenuItem
             // 
@@ -197,6 +198,7 @@
             this.eliminarToolStripMenuItem2.Name = "eliminarToolStripMenuItem2";
             this.eliminarToolStripMenuItem2.Size = new System.Drawing.Size(270, 34);
             this.eliminarToolStripMenuItem2.Text = "Eliminar";
+            this.eliminarToolStripMenuItem2.Click += new System.EventHandler(this.eliminarToolStripMenuItem2_Click);
             // 
             // frmPrincipal
             // 
