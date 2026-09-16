@@ -49,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="fmrMarcasModificar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmrMarcasModificar.Designer.cs">
+      <DependentUpon>fmrMarcasModificar.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmArticuloMostrar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,11 +73,23 @@
     <Compile Include="frmCategoriaAgregar.Designer.cs">
       <DependentUpon>frmCategoriaAgregar.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCategoriaModificar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCategoriaModificar.Designer.cs">
+      <DependentUpon>frmCategoriaModificar.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCategoriaMostrar.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmCategoriaMostrar.Designer.cs">
       <DependentUpon>frmCategoriaMostrar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMarcaModificar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMarcaModificar.Designer.cs">
+      <DependentUpon>frmMarcaModificar.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMarcaMostrar.cs">
       <SubType>Form</SubType>
@@ -93,6 +111,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="fmrMarcasModificar.resx">
+      <DependentUpon>fmrMarcasModificar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmArticuloMostrar.resx">
       <DependentUpon>frmArticuloMostrar.cs</DependentUpon>
     </EmbeddedResource>
@@ -102,8 +123,14 @@
     <EmbeddedResource Include="frmCategoriaAgregar.resx">
       <DependentUpon>frmCategoriaAgregar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmCategoriaModificar.resx">
+      <DependentUpon>frmCategoriaModificar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCategoriaMostrar.resx">
       <DependentUpon>frmCategoriaMostrar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMarcaModificar.resx">
+      <DependentUpon>frmMarcaModificar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMarcaMostrar.resx">
       <DependentUpon>frmMarcaMostrar.cs</DependentUpon>
