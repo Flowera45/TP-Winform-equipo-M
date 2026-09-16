@@ -48,10 +48,10 @@ namespace Negocio
             {
                 datos.setearConsulta("inserte into MARCAS (Descripcion) values (@Descripcion)");
                 datos.setearParametro("@Descripcion", nueva.Descripcion);
-                datos.ejecutarAccion(); 
+                datos.ejecutarAccion();
             }
 
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw ex;
             }
@@ -83,5 +83,36 @@ namespace Negocio
             }
 
         }
+
+        public void eliminar(int id)
+        {
+
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("delete from MARCAS where Id = @Id");
+                datos.setearParametro("@Id", id);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+
+
+
+
+
+            }
+
+
+
+
+        }
+
     }
+
 }
