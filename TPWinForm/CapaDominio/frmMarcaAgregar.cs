@@ -39,11 +39,28 @@ namespace WinformApp
                     MessageBox.Show("la descripcion no puede estar vacia");
                 }
 
-                Marca nueva = new Marca();
-                nueva.Descripcion = textBox1.Text;
+                if (textBox1.Text.Trim().Length > 50)
+                {
+                    MessageBox.Show("la descripcion no puede tener mas de 50 caracteres");
+                    return;
+                }
 
                 MarcaNegocio negocio = new MarcaNegocio();
+                List<Marca> existentes = negocio.listar();
+
+                bool yaexiste = existentes.Any(m => m.Descripcion.Equals(textBox1.Text.Trim(), StringComparison.OrdinalIgnoreCase));
+                if (yaexiste)
+                {
+                    MessageBox.Show("la marca ya existe");
+                    return;
+                }
+
+                Marca nueva = new Marca();
+                nueva.Descripcion = textBox1.Text.Trim();
+
                 negocio.agregar(nueva);
+
+                MessageBox.Show("Marca agregada correctamente");
 
                 DialogResult = DialogResult.OK;
                 Close();

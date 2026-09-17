@@ -41,15 +41,32 @@ namespace WinformApp
 
                 }
 
-                Categoria nueva = new Categoria();
-                nueva.Descripcion = textBox1.Text;
+                if (textBox1.Text.Trim().Length > 50)
+                {
+                    MessageBox.Show("La descripción no puede tener más de 50 caracteres.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
 
                 CategoriaNegocio negocio = new CategoriaNegocio();
+                List<Categoria> existentes = negocio.listar();
+
+                bool yaExiste = existentes.Any(c => c.Descripcion.Trim().ToLower() == textBox1.Text.Trim().ToLower());
+                if (yaExiste)
+                {
+                    MessageBox.Show("La categoría ya existe.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+
+                Categoria nueva = new Categoria();
+                nueva.Descripcion = textBox1.Text.Trim();
+
                 negocio.agregar(nueva);
 
                 MessageBox.Show("Categoria agregada correctamente");
 
                 DialogResult = DialogResult.OK;
+                Close();
             }
 
             catch (Exception ex)
