@@ -37,6 +37,7 @@ namespace WinformApp
                 if (string.IsNullOrWhiteSpace(textBox1.Text))
                 {
                     MessageBox.Show("la descripcion no puede estar vacia");
+                    return;
                 }
 
                 if (textBox1.Text.Trim().Length > 50)

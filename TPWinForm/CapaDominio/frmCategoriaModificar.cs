@@ -86,7 +86,7 @@ namespace WinformApp
                 bool yaexiste = existentes.Any(m => m.Id != id && m.Descripcion.Trim().ToLower() == textBox2.Text.Trim().ToLower());
                 if (yaexiste)
                 {
-                    MessageBox.Show("Ya existe otra marca con esa descripción.");
+                    MessageBox.Show("Ya existe otra categoría con esa descripción.");
                     return;
                 }
 

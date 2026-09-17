@@ -38,7 +38,7 @@ namespace WinformApp
                 {
 
                     MessageBox.Show("El campo de categoría no puede estar vacío.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                    return;
                 }
 
                 if (textBox1.Text.Trim().Length > 50)

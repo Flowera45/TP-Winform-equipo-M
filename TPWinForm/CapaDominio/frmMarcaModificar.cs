@@ -27,12 +27,12 @@ namespace WinformApp
             {
                 int id = int.Parse(textBox1.Text);
 
-                CategoriaNegocio negocio = new CategoriaNegocio();
-                Categoria encontrada = negocio.listar().FirstOrDefault(c => c.Id == id);
+                MarcaNegocio negocio = new MarcaNegocio();
+                Marca encontrada = negocio.listar().FirstOrDefault(m => m.Id == id);
 
                 if (encontrada == null)
                 {
-                    MessageBox.Show("No se encontró la categoría con el ID proporcionado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("No se encontró la marca con el ID proporcionado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     textBox2.Text = "";
                     return;
                 }
@@ -50,7 +50,7 @@ namespace WinformApp
 
             catch (Exception ex)
             {
-                MessageBox.Show("Ocurrió un error al buscar la categoría: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Ocurrió un error al buscar la marca: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
