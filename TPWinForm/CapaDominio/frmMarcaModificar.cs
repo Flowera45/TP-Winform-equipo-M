@@ -73,17 +73,35 @@ namespace WinformApp
                     return;
                 }
 
-                Categoria modificada = new Categoria();
-                modificada.Id = int.Parse(textBox1.Text);
-                modificada.Descripcion = textBox2.Text;
+                if (textBox2.Text.Trim().Length > 50)
+                {
+                    MessageBox.Show("La descripción no puede tener más de 50 caracteres.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
 
-                CategoriaNegocio negocio = new CategoriaNegocio();
+                int id = int.Parse(textBox1.Text);
+
+                MarcaNegocio negocio = new MarcaNegocio();
+                List<Marca> existentes = negocio.listar();
+
+                bool yaexiste = existentes.Any(m => m.Id != id && m.Descripcion.Trim().ToLower() == textBox2.Text.Trim().ToLower());
+                if (yaexiste)
+                {
+                    MessageBox.Show("Ya existe otra marca con esa descripción.");
+                    return;
+                }
+
+                Marca modificada = new Marca();
+                modificada.Id = id;
+                modificada.Descripcion = textBox2.Text.Trim();
+
                 negocio.modificar(modificada);
 
-                MessageBox.Show("Categoría modificada exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Marca modificada exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 DialogResult = DialogResult.OK;
                 Close();
+
 
             }
             catch (FormatException)

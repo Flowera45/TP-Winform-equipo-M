@@ -49,11 +49,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="fmrMarcasModificar.cs">
+    <Compile Include="frmCategoriaEliminar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fmrMarcasModificar.Designer.cs">
-      <DependentUpon>fmrMarcasModificar.cs</DependentUpon>
+    <Compile Include="frmCategoriaEliminar.Designer.cs">
+      <DependentUpon>frmCategoriaEliminar.cs</DependentUpon>
     </Compile>
     <Compile Include="frmArticuloMostrar.cs">
       <SubType>Form</SubType>
@@ -85,6 +85,12 @@
     <Compile Include="frmCategoriaMostrar.Designer.cs">
       <DependentUpon>frmCategoriaMostrar.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmMarcaEliminar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMarcaEliminar.Designer.cs">
+      <DependentUpon>frmMarcaEliminar.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMarcaModificar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,8 +117,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="fmrMarcasModificar.resx">
-      <DependentUpon>fmrMarcasModificar.cs</DependentUpon>
+    <EmbeddedResource Include="frmCategoriaEliminar.resx">
+      <DependentUpon>frmCategoriaEliminar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmArticuloMostrar.resx">
       <DependentUpon>frmArticuloMostrar.cs</DependentUpon>
@@ -128,6 +134,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmCategoriaMostrar.resx">
       <DependentUpon>frmCategoriaMostrar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMarcaEliminar.resx">
+      <DependentUpon>frmMarcaEliminar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMarcaModificar.resx">
       <DependentUpon>frmMarcaModificar.cs</DependentUpon>
