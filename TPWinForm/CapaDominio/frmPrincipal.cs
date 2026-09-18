@@ -55,6 +55,12 @@ namespace WinformApp
             ventana.ShowDialog();
         }
 
+        private void buscarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmCategoriaBuscar ventana = new frmCategoriaBuscar();
+            ventana.ShowDialog();
+        }
+
         //MARCA
         private void mostrarToolStripMenuItem2_Click(object sender, EventArgs e)
         {
@@ -78,6 +84,12 @@ namespace WinformApp
         private void eliminarToolStripMenuItem2_Click(object sender, EventArgs e)
         {
             frmMarcaEliminar ventana = new frmMarcaEliminar();
+            ventana.ShowDialog();
+        }
+
+        private void buscarToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            frmMarcaBuscar ventana = new frmMarcaBuscar();
             ventana.ShowDialog();
         }
 

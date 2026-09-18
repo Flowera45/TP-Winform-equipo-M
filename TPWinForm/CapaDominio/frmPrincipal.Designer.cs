@@ -132,6 +132,7 @@
             this.buscarToolStripMenuItem1.Name = "buscarToolStripMenuItem1";
             this.buscarToolStripMenuItem1.Size = new System.Drawing.Size(189, 34);
             this.buscarToolStripMenuItem1.Text = "&Buscar";
+            this.buscarToolStripMenuItem1.Click += new System.EventHandler(this.buscarToolStripMenuItem1_Click);
             // 
             // agregarToolStripMenuItem1
             // 
@@ -181,6 +182,7 @@
             this.buscarToolStripMenuItem2.Name = "buscarToolStripMenuItem2";
             this.buscarToolStripMenuItem2.Size = new System.Drawing.Size(270, 34);
             this.buscarToolStripMenuItem2.Text = "&Buscar";
+            this.buscarToolStripMenuItem2.Click += new System.EventHandler(this.buscarToolStripMenuItem2_Click);
             // 
             // agregarToolStripMenuItem2
             // 
