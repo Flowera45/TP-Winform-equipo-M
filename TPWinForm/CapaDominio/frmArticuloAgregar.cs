@@ -148,5 +148,54 @@ namespace WinformApp
             }
 
         }
+
+        private void txtImagenUrl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblImagenUrl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtImagenUrl_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAgregarImagen_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtImagenUrl.Text))
+            {
+                MessageBox.Show("Debe ingresa una URL de imagen");
+                return;
+            }
+            if (listImagenes.Items.Contains(txtImagenUrl.Text.Trim()))
+            {
+                MessageBox.Show("Esa imagen ya fue agregada");
+                return;
+            }
+
+            listImagenes.Items.Add(txtImagenUrl.Text.Trim());
+
+            txtImagenUrl.Text = "";
+        }
+
+        private void listImagenes_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnQuitarImagen_Click(object sender, EventArgs e)
+        {
+            if (listImagenes.SelectedItems == null)
+            {
+                MessageBox.Show("Debe seleccionar una imagen");
+                return;
+            }
+
+            listImagenes.Items.Remove(listImagenes.SelectedItems);
+        }
     }
 }

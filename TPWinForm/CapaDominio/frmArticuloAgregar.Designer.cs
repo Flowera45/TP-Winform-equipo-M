@@ -42,6 +42,11 @@
             this.cboCategoria = new System.Windows.Forms.ComboBox();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.lblImagenUrl = new System.Windows.Forms.Label();
+            this.txtImagenUrl = new System.Windows.Forms.TextBox();
+            this.btnAgregarImagen = new System.Windows.Forms.Button();
+            this.listImagenes = new System.Windows.Forms.ListBox();
+            this.btnQuitarImagen = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblCodigo
@@ -170,11 +175,64 @@
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             // 
+            // lblImagenUrl
+            // 
+            this.lblImagenUrl.AutoSize = true;
+            this.lblImagenUrl.Location = new System.Drawing.Point(254, 36);
+            this.lblImagenUrl.Name = "lblImagenUrl";
+            this.lblImagenUrl.Size = new System.Drawing.Size(87, 13);
+            this.lblImagenUrl.TabIndex = 16;
+            this.lblImagenUrl.Text = "URL de imagen: ";
+            this.lblImagenUrl.Click += new System.EventHandler(this.lblImagenUrl_Click);
+            // 
+            // txtImagenUrl
+            // 
+            this.txtImagenUrl.Location = new System.Drawing.Point(347, 33);
+            this.txtImagenUrl.Name = "txtImagenUrl";
+            this.txtImagenUrl.Size = new System.Drawing.Size(275, 20);
+            this.txtImagenUrl.TabIndex = 17;
+            this.txtImagenUrl.Click += new System.EventHandler(this.txtImagenUrl_Click);
+            this.txtImagenUrl.TextChanged += new System.EventHandler(this.txtImagenUrl_TextChanged);
+            // 
+            // btnAgregarImagen
+            // 
+            this.btnAgregarImagen.Location = new System.Drawing.Point(395, 72);
+            this.btnAgregarImagen.Name = "btnAgregarImagen";
+            this.btnAgregarImagen.Size = new System.Drawing.Size(128, 23);
+            this.btnAgregarImagen.TabIndex = 18;
+            this.btnAgregarImagen.Text = "Agregar imagen";
+            this.btnAgregarImagen.UseVisualStyleBackColor = true;
+            this.btnAgregarImagen.Click += new System.EventHandler(this.btnAgregarImagen_Click);
+            // 
+            // listImagenes
+            // 
+            this.listImagenes.FormattingEnabled = true;
+            this.listImagenes.Location = new System.Drawing.Point(347, 120);
+            this.listImagenes.Name = "listImagenes";
+            this.listImagenes.Size = new System.Drawing.Size(231, 95);
+            this.listImagenes.TabIndex = 19;
+            this.listImagenes.Click += new System.EventHandler(this.listImagenes_Click);
+            // 
+            // btnQuitarImagen
+            // 
+            this.btnQuitarImagen.Location = new System.Drawing.Point(395, 238);
+            this.btnQuitarImagen.Name = "btnQuitarImagen";
+            this.btnQuitarImagen.Size = new System.Drawing.Size(128, 23);
+            this.btnQuitarImagen.TabIndex = 20;
+            this.btnQuitarImagen.Text = "Quitar Imagen";
+            this.btnQuitarImagen.UseVisualStyleBackColor = true;
+            this.btnQuitarImagen.Click += new System.EventHandler(this.btnQuitarImagen_Click);
+            // 
             // frmArticuloAgregar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(230, 450);
+            this.ClientSize = new System.Drawing.Size(634, 450);
+            this.Controls.Add(this.btnQuitarImagen);
+            this.Controls.Add(this.listImagenes);
+            this.Controls.Add(this.btnAgregarImagen);
+            this.Controls.Add(this.txtImagenUrl);
+            this.Controls.Add(this.lblImagenUrl);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.cboCategoria);
@@ -213,5 +271,10 @@
         private System.Windows.Forms.ComboBox cboCategoria;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Label lblImagenUrl;
+        private System.Windows.Forms.TextBox txtImagenUrl;
+        private System.Windows.Forms.Button btnAgregarImagen;
+        private System.Windows.Forms.ListBox listImagenes;
+        private System.Windows.Forms.Button btnQuitarImagen;
     }
 }
