@@ -83,6 +83,50 @@ namespace WinformApp
 
             try
             {
+                if (string.IsNullOrWhiteSpace(txtCodigo.Text))
+                {
+                    MessageBox.Show("El código no puede estar vacío");
+                    return;
+                }
+                if (string.IsNullOrWhiteSpace(txtNombre.Text))
+                {
+                    MessageBox.Show("El nombre no puede estar vacío");
+                    return;
+                }
+                
+                if (string.IsNullOrWhiteSpace(txtDescripcion.Text))
+                {
+                    MessageBox.Show("La descripción no puede estar vacía");
+                    return;
+                }
+                if (txtDescripcion.Text.Trim().Length > 50)
+                {
+                    MessageBox.Show("La descripción no puede tener más de 50 caracteres.");
+                    return;
+                }
+                decimal precio;
+
+                if (!decimal.TryParse(txtPrecio.Text, out precio))
+                {
+                    MessageBox.Show("El precio debe ser un número válido");
+                    return;
+                }
+                if (precio <=0)
+                { MessageBox.Show("El precio debe ser mayor a cero");
+                    return;
+                }
+                if (cboMarca.SelectedItem == null)
+                {
+                    MessageBox.Show("Debe seleccionar una marcar");
+                    return;
+                }
+                if (cboCategoria.SelectedItem == null)
+                {
+                    MessageBox.Show("Debe seleccionar una categoría");
+                    return;
+                }
+
+                
                 nuevo.Codigo = txtCodigo.Text;
                 nuevo.Nombre = txtNombre.Text;
                 nuevo.Descripcion = txtDescripcion.Text;
