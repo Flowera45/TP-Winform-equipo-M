@@ -47,6 +47,13 @@ namespace WinformApp
 
                 dataGridView1.DataSource = null;
                 dataGridView1.DataSource = resultado;
+
+                if (resultado.Count == 0)
+                {
+                    MessageBox.Show("No se encontraron resultados.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+
             }
             catch (Exception ex)
             {
