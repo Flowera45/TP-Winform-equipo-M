@@ -112,17 +112,21 @@ namespace WinformApp
 
                 Articulo articuloGuardado = negocio.listar().FirstOrDefault(a => a.Codigo == nuevo.Codigo);
 
-                if (articuloGuardado == null && !string.IsNullOrWhiteSpace(txtImagenUrl.Text))
+                if (articuloGuardado == null)
                 {
-                    Imagen nuevaImagen = new Imagen();
-
-                    nuevaImagen.IdArticulo = articuloGuardado.Id;
-                    nuevaImagen.ImagenUrl = txtImagenUrl.Text.Trim();
-
                     ImagenNegocio imagenNegocio = new ImagenNegocio();
-                    imagenNegocio.agregar(nuevaImagen);
-                }
 
+                    foreach (string url in listImagen.Items)
+                    {
+                        Imagen nuevaImagen = new Imagen();
+
+                        nuevaImagen.IdArticulo = articuloGuardado.Id;
+                        nuevaImagen.ImagenUrl = url;
+
+
+                        imagenNegocio.agregar(nuevaImagen);
+                    }
+                }
                 MessageBox.Show("Artículo agregado correctamente.");
 
                 DialogResult = DialogResult.OK;
@@ -138,6 +142,53 @@ namespace WinformApp
         private void txtImagenUrl_leave(object sender, EventArgs e)
         {
             cargarImagen(txtImagenUrl.Text);
+        }
+
+        private void btnAgregarImagen_Click(object sender, EventArgs e)
+        {
+            if(string.IsNullOrWhiteSpace(txtImagenUrl.Text))
+            {
+                MessageBox.Show("Debe ingresar una URL de imagen");
+                return;
+            }
+            if(listImagen.Items.Contains(txtImagenUrl.Text.Trim()))
+            {
+                MessageBox.Show("Esa imagen ya fue agregada");
+                return;
+            }
+
+            listImagen.Items.Add(txtImagenUrl.Text.Trim());
+            txtImagenUrl.Text = "";
+        }
+
+        private void btnQuitarImagen_Click(object sender, EventArgs e)
+        {
+            if(listImagen.SelectedItems == null)
+            {
+                MessageBox.Show("Debe seleccionar una imagen");
+                return;
+            }
+
+            listImagen.Items.Remove(listImagen.SelectedItem);
+        }
+
+        private void listImagen_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listImagen_Click(object sender, EventArgs e)
+        {
+            if (listImagen.SelectedItems != null)
+            {
+                cargarImagen(listImagen.SelectedItem.ToString());
+            }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Cancel;
+            Close();
         }
     }
 }
