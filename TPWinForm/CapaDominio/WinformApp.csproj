@@ -49,6 +49,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmArticuloAgregar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmArticuloAgregar.Designer.cs">
+      <DependentUpon>frmArticuloAgregar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmArticuloMostrar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmArticuloMostrar.Designer.cs">
+      <DependentUpon>frmArticuloMostrar.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCategoriaBuscar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,18 +72,6 @@
     </Compile>
     <Compile Include="frmCategoriaEliminar.Designer.cs">
       <DependentUpon>frmCategoriaEliminar.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmArticuloMostrar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmArticuloMostrar.Designer.cs">
-      <DependentUpon>frmArticuloMostrar.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmArticuloAgregar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmArticuloAgregar.Designer.cs">
-      <DependentUpon>frmArticuloAgregar.cs</DependentUpon>
     </Compile>
     <Compile Include="frmCategoriaAgregar.cs">
       <SubType>Form</SubType>
@@ -129,17 +129,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmArticuloAgregar.resx">
+      <DependentUpon>frmArticuloAgregar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmArticuloMostrar.resx">
+      <DependentUpon>frmArticuloMostrar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCategoriaBuscar.resx">
       <DependentUpon>frmCategoriaBuscar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCategoriaEliminar.resx">
       <DependentUpon>frmCategoriaEliminar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmArticuloMostrar.resx">
-      <DependentUpon>frmArticuloMostrar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmArticuloAgregar.resx">
-      <DependentUpon>frmArticuloAgregar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCategoriaAgregar.resx">
       <DependentUpon>frmCategoriaAgregar.cs</DependentUpon>

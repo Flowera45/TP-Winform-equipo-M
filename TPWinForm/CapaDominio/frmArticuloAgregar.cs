@@ -27,52 +27,17 @@ namespace WinformApp
                 cboMarca.DataSource = marcaNegocio.listar();
                 cboCategoria.DataSource = categoriaNegocio.listar();
             }
-        
-        
 
-        private void lblNombre_Click(object sender, EventArgs e)
+        private void cargarImagen(string imagen)
         {
-
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblPrecio_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblDescripcion_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblCaterogoria_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblCodigo_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblMarca_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtCodigo_Click(object sender, EventArgs e)
-        {
-
+            try
+            {
+                pBoxImagen.Load(imagen);
+            }
+            catch (Exception)
+            {
+                pBoxImagen.Load("https://efectocolibri.com/wp-content/uploads/2021/01/placeholder.png");
+            }
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
@@ -86,6 +51,14 @@ namespace WinformApp
                 if (string.IsNullOrWhiteSpace(txtCodigo.Text))
                 {
                     MessageBox.Show("El código no puede estar vacío");
+                    return;
+                }
+
+                bool codigoExiste = negocio.listar().Any(a => a.Codigo.ToLower() == txtCodigo.Text.Trim().ToLower());
+
+                if (codigoExiste)
+                {
+                    MessageBox.Show("Ya existe un artículo con ese código.");
                     return;
                 }
                 if (string.IsNullOrWhiteSpace(txtNombre.Text))
@@ -137,6 +110,19 @@ namespace WinformApp
 
                 negocio.agregar(nuevo);
 
+                Articulo articuloGuardado = negocio.listar().FirstOrDefault(a => a.Codigo == nuevo.Codigo);
+
+                if (articuloGuardado == null && !string.IsNullOrWhiteSpace(txtImagenUrl.Text))
+                {
+                    Imagen nuevaImagen = new Imagen();
+
+                    nuevaImagen.IdArticulo = articuloGuardado.Id;
+                    nuevaImagen.ImagenUrl = txtImagenUrl.Text.Trim();
+
+                    ImagenNegocio imagenNegocio = new ImagenNegocio();
+                    imagenNegocio.agregar(nuevaImagen);
+                }
+
                 MessageBox.Show("Artículo agregado correctamente.");
 
                 DialogResult = DialogResult.OK;
@@ -149,53 +135,9 @@ namespace WinformApp
 
         }
 
-        private void txtImagenUrl_Click(object sender, EventArgs e)
+        private void txtImagenUrl_leave(object sender, EventArgs e)
         {
-
-        }
-
-        private void lblImagenUrl_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtImagenUrl_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnAgregarImagen_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(txtImagenUrl.Text))
-            {
-                MessageBox.Show("Debe ingresa una URL de imagen");
-                return;
-            }
-            if (listImagenes.Items.Contains(txtImagenUrl.Text.Trim()))
-            {
-                MessageBox.Show("Esa imagen ya fue agregada");
-                return;
-            }
-
-            listImagenes.Items.Add(txtImagenUrl.Text.Trim());
-
-            txtImagenUrl.Text = "";
-        }
-
-        private void listImagenes_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnQuitarImagen_Click(object sender, EventArgs e)
-        {
-            if (listImagenes.SelectedItems == null)
-            {
-                MessageBox.Show("Debe seleccionar una imagen");
-                return;
-            }
-
-            listImagenes.Items.Remove(listImagenes.SelectedItems);
+            cargarImagen(txtImagenUrl.Text);
         }
     }
 }

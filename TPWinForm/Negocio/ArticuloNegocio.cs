@@ -59,7 +59,7 @@ namespace Negocio
 
             try
             {
-                datos.setearConsulta( "Insert into ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio) values (@Codigo, @Nombre, @Descripcion, @IdMarca, @IdCategoria, @Precio)");
+                datos.setearConsulta("Insert into ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio) values (@Codigo, @Nombre, @Descripcion, @IdMarca, @IdCategoria, @Precio)");
                 datos.setearParametro("@Codigo", nuevo.Codigo);
                 datos.setearParametro("@Nombre", nuevo.Nombre);
                 datos.setearParametro("@Descripcion", nuevo.Descripcion);
