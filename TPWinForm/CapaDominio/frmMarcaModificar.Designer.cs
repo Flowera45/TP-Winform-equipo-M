@@ -40,70 +40,77 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(8, 6);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(26, 20);
+            this.label1.Size = new System.Drawing.Size(18, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "ID";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 130);
+            this.label2.Location = new System.Drawing.Point(8, 84);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(92, 20);
+            this.label2.Size = new System.Drawing.Size(63, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "Descripcion";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(16, 49);
+            this.textBox1.Location = new System.Drawing.Point(11, 32);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 26);
+            this.textBox1.Size = new System.Drawing.Size(68, 20);
             this.textBox1.TabIndex = 2;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(16, 182);
+            this.textBox2.Location = new System.Drawing.Point(11, 118);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(400, 26);
+            this.textBox2.Size = new System.Drawing.Size(268, 20);
             this.textBox2.TabIndex = 3;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(143, 49);
+            this.button1.Location = new System.Drawing.Point(95, 32);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(90, 30);
+            this.button1.Size = new System.Drawing.Size(60, 20);
             this.button1.TabIndex = 4;
             this.button1.Text = "Buscar";
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(16, 227);
+            this.button2.Location = new System.Drawing.Point(11, 148);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(90, 30);
+            this.button2.Size = new System.Drawing.Size(60, 20);
             this.button2.TabIndex = 5;
             this.button2.Text = "Guardar";
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(143, 227);
+            this.button3.Location = new System.Drawing.Point(95, 148);
+            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(90, 30);
+            this.button3.Size = new System.Drawing.Size(60, 20);
             this.button3.TabIndex = 6;
             this.button3.Text = "Cancelar";
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // frmMarcaModificar
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(309, 184);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -111,8 +118,10 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmMarcaModificar";
-            this.Text = "frmMarcaModificar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Modificar marca";
             this.ResumeLayout(false);
             this.PerformLayout();
 

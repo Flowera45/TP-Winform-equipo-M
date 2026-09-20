@@ -30,6 +30,12 @@ namespace WinformApp
 
             ventana.ShowDialog();
         }
+        private void buscarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmArticuloBuscar ventana = new frmArticuloBuscar();
+            ventana.ShowDialog();
+        }
+
         //CATEGORÍA
         private void mostrarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
@@ -92,7 +98,6 @@ namespace WinformApp
             frmMarcaBuscar ventana = new frmMarcaBuscar();
             ventana.ShowDialog();
         }
-
     }
 
 }
