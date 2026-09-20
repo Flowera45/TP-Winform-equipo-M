@@ -77,7 +77,7 @@ namespace WinformApp
             {
                 pBoxImagenArticulo.Load("https://efectocolibri.com/wp-content/uploads/2021/01/placeholder.png");
             }
-
+        
         }*/
 
         // Un solo HttpClient estático para toda la aplicación (buena práctica de rendimiento)
@@ -112,6 +112,8 @@ namespace WinformApp
                 // la aplicación no se congela y mantiene el placeholder cargado en el paso 1.
             }
         }
+        
+        
 
 
 
