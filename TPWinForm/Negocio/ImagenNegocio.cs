@@ -19,7 +19,7 @@ namespace Negocio
 
             try
             {
-                datos.setearConsulta( "Select IdArticulo, ImagenUrl From IMAGENES");
+                datos.setearConsulta("Select IdArticulo, ImagenUrl From IMAGENES");
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
@@ -62,6 +62,33 @@ namespace Negocio
             }
             finally
             {
+                datos.cerrarConexion();
+            }
+        }
+
+        public void eliminar(int idarticulo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+
+                datos.setearConsulta("Detele from IMAGENES Where idarticulo = @idarticulo");
+                datos.setearParametro("@idarticulo", idarticulo);
+                datos.ejecutarAccion();
+
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+
+            }
+
+            finally
+            {
+
                 datos.cerrarConexion();
             }
         }
