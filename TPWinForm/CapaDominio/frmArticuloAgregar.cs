@@ -112,7 +112,7 @@ namespace WinformApp
 
                 Articulo articuloGuardado = negocio.listar().FirstOrDefault(a => a.Codigo == nuevo.Codigo);
 
-                if (articuloGuardado == null)
+                if (articuloGuardado != null)
                 {
                     ImagenNegocio imagenNegocio = new ImagenNegocio();
 

@@ -14,37 +14,157 @@ namespace WinformApp
 {
     public partial class frmArticuloBuscar : Form
     {
+        public List<Imagen> listImagenes;
         public frmArticuloBuscar()
         {
             InitializeComponent();
         }
 
+
+        private void frmArticuloBuscar_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                MarcaNegocio marcaNegocio = new MarcaNegocio();
+                CategoriaNegocio categoriaNegocio = new CategoriaNegocio();
+                ImagenNegocio imagenNegocio = new ImagenNegocio();
+
+                cboMarca.DataSource = marcaNegocio.listar();
+                cboCategoria.DataSource = categoriaNegocio.listar();
+
+                //Para que se pueda buscar por mas que el item este vacio
+                cboMarca.SelectedIndex = -1;
+                cboCategoria.SelectedIndex = -1;
+
+                listImagenes = imagenNegocio.listar();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error al cargar el formulario: " + ex.Message);
+            }
+        }
         private void btnBucar_Click(object sender, EventArgs e)
         {
             try
             {
-                string criterio = txtBuscar.Text.Trim();
+               
                 ArticuloNegocio negocio = new ArticuloNegocio();
-                List<Articulo> todos = negocio.listar();
+                List<Articulo> resultado = negocio.listar();
+                
+                //Buscar por ID
 
-                List<Articulo> resultado;
-
-                if (string.IsNullOrEmpty(criterio))
+                if (!string.IsNullOrWhiteSpace(txtId.Text))
                 {
-                    resultado = todos;
+                    int id;
+                    
+                    if (!int.TryParse(txtId.Text, out id))
+                    {
+                        MessageBox.Show("El ID debe ser un número válido");
+                        return;
+                    }
+
+                    resultado = resultado.Where(a => a.Id == id).ToList();
+
                 }
-                else
+
+                //Buscar por CÓDIGO
+
+                if (!string.IsNullOrWhiteSpace(txtCodigo.Text))
                 {
-                    int idBuscado;
-                    bool esNumero = int.TryParse(criterio, out idBuscado);
+                    string codigo = txtCodigo.Text.Trim().ToLower();
 
-                    resultado = todos.Where(a => (esNumero && a.Id == idBuscado) || a.Codigo.ToLower().Contains(criterio.ToLower()) || a.Nombre.ToLower().Contains(criterio.ToLower()) || a.Descripcion.ToLower().Contains(criterio.ToLower()) || a.Marca.Descripcion.ToLower().Contains(criterio.ToLower()) || a.Categoria.Descripcion.ToLower().Contains(criterio.ToLower())).ToList();
+                    resultado = resultado.Where(a => a.Codigo.ToLower().Contains(codigo)).ToList();
                 }
 
-                dgvArticulos.DataSource = null;
-                dgvArticulos.DataSource = resultado;
-                dgvArticulos.Columns["IdMarca"].Visible = false;
-                dgvArticulos.Columns["IdCategoria"].Visible = false;
+                //Buscar por NOMBRE
+
+                if (!string.IsNullOrWhiteSpace(txtNombre.Text))
+                {
+                    string nombre = txtCodigo.Text.Trim().ToLower();
+
+                    resultado = resultado.Where(a => a.Codigo.ToLower().Contains(nombre)).ToList();
+                }
+
+                //Buscar por MARCA
+
+                if(cboMarca.SelectedItem !=null)
+                {
+                    Marca marcaSeleccionada = (Marca)cboMarca.SelectedItem;
+                    
+                    resultado = resultado .Where(a => a.Marca.Id == marcaSeleccionada.Id).ToList();
+                }
+
+                //Buscar por CATEGORIA
+
+                if (cboCategoria.SelectedItem != null)
+                {
+                    Categoria categoriaSeleccionada = (Categoria)cboCategoria.SelectedItem;
+
+                    resultado = resultado.Where(a => a.Categoria.Id == categoriaSeleccionada.Id).ToList();
+                }
+
+
+                //PRECIO DESDE
+
+                decimal precioDesde;
+
+                if (!string.IsNullOrWhiteSpace(txtPrecioDesde.Text))
+                { 
+                    if (!decimal.TryParse(txtPrecioDesde.Text, out precioDesde))
+                    {
+                        MessageBox.Show("El precio debe ser un númeor válido");
+                        return;
+                    }
+
+                    if (precioDesde < 0)
+                    {
+                        MessageBox.Show("El precio no puede ser negativo");
+                        return;
+                    }
+
+                    resultado = resultado.Where(a => a.Precio >= precioDesde).ToList();
+                 
+                }
+
+                //PRECIO HASTA
+
+                decimal precioHasta;
+
+                if (!string.IsNullOrWhiteSpace(txtPrecioHasta.Text))
+                {
+                    if (!decimal.TryParse(txtPrecioDesde.Text, out precioHasta))
+                    {
+                        MessageBox.Show("El precio debe ser un númeor válido");
+                        return;
+                    }
+
+                    if (precioHasta < 0)
+                    {
+                        MessageBox.Show("El precio no puede ser negativo");
+                        return;
+                    }
+
+                    resultado = resultado.Where(a => a.Precio >= precioHasta).ToList();
+
+                }
+
+                //VALIDADOR DEL RANGO
+                if (!string.IsNullOrWhiteSpace(txtPrecioDesde.Text) && !string.IsNullOrWhiteSpace(txtPrecioHasta.Text))
+                {
+                    decimal.TryParse(txtPrecioDesde.Text, out precioDesde);
+                    decimal.TryParse(txtPrecioHasta.Text, out precioHasta);
+
+                    if (precioDesde > precioHasta)
+                    {
+                        MessageBox.Show("El precio 'DESDE' no puede ser mayor que el 'HASTA'");
+                        return;
+                    }
+                }
+
+                //MUESTRA RESULTADOS
+                 frmArticuloMostrar ventana = new frmArticuloMostrar(resultado);
+                 ventana.ShowDialog();
+              
 
                 if (resultado.Count == 0)
                 {
@@ -56,5 +176,7 @@ namespace WinformApp
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+       
     }
 }

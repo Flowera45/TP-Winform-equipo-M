@@ -98,6 +98,11 @@ namespace WinformApp
             frmMarcaBuscar ventana = new frmMarcaBuscar();
             ventana.ShowDialog();
         }
+
+        private void salirToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 
 }

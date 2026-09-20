@@ -83,6 +83,11 @@ namespace WinformApp
             Close();
         }
 
+        private void btnCancelarMarca_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Cancel;
+            Close();
+        }
     }
 
 }
