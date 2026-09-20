@@ -50,6 +50,7 @@
             this.ClientSize = new System.Drawing.Size(274, 341);
             this.Controls.Add(this.dgvCategorias);
             this.Name = "frmCategoriaMostrar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Categorías";
             this.Load += new System.EventHandler(this.frmCategoriaMostrar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategorias)).EndInit();
