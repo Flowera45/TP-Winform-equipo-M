@@ -14,7 +14,7 @@ namespace WinformApp
 {
     public partial class frmArticuloBuscar : Form
     {
-        public List<Imagen> listImagenes;
+      
         public frmArticuloBuscar()
         {
             InitializeComponent();
@@ -35,8 +35,6 @@ namespace WinformApp
                 //Para que se pueda buscar por mas que el item este vacio
                 cboMarca.SelectedIndex = -1;
                 cboCategoria.SelectedIndex = -1;
-
-                listImagenes = imagenNegocio.listar();
             }
             catch(Exception ex)
             {
@@ -104,9 +102,10 @@ namespace WinformApp
                 }
 
 
-                //PRECIO DESDE
+                //PRECIO 
 
                 decimal precioDesde;
+                decimal precioHasta;
 
                 if (!string.IsNullOrWhiteSpace(txtPrecioDesde.Text))
                 { 
@@ -126,10 +125,6 @@ namespace WinformApp
                  
                 }
 
-                //PRECIO HASTA
-
-                decimal precioHasta;
-
                 if (!string.IsNullOrWhiteSpace(txtPrecioHasta.Text))
                 {
                     if (!decimal.TryParse(txtPrecioDesde.Text, out precioHasta))
@@ -148,7 +143,6 @@ namespace WinformApp
 
                 }
 
-                //VALIDADOR DEL RANGO
                 if (!string.IsNullOrWhiteSpace(txtPrecioDesde.Text) && !string.IsNullOrWhiteSpace(txtPrecioHasta.Text))
                 {
                     decimal.TryParse(txtPrecioDesde.Text, out precioDesde);

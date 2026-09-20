@@ -16,9 +16,19 @@ namespace WinformApp
     public partial class frmArticuloMostrar : Form
     {
         private List<Imagen> listaImagen;
+        private List<Articulo> listaArticulos;
         public frmArticuloMostrar()
         {
             InitializeComponent();
+        }
+
+        //CONSTRUCTOR PARA MOSTRAR DESDE EL BUSCADOR
+        public frmArticuloMostrar(List<Articulo> articulos)
+        {
+            InitializeComponent();
+            
+            listaArticulos = articulos;
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -26,8 +36,16 @@ namespace WinformApp
             ImagenNegocio imgNegocio = new ImagenNegocio();
             listaImagen = imgNegocio.listar();
 
-            ArticuloNegocio negocio = new ArticuloNegocio();
-            dgvArticulos.DataSource = negocio.listar();
+            if (listaArticulos == null)
+            {
+                ArticuloNegocio negocio = new ArticuloNegocio();
+                dgvArticulos.DataSource = negocio.listar();
+            }
+
+            else
+            {
+                dgvArticulos.DataSource = listaArticulos;
+            }
             // negocio.listar va a la DB y devuelve una lista de datos
             // DataSource recibe esos datos y los modela en la tabla
             dgvArticulos.Columns["IdMarca"].Visible = false;      //No quiero que muestre estos IDs

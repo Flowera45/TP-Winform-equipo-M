@@ -1,4 +1,5 @@
-﻿using Negocio;
+﻿using Dominio;
+using Negocio;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,15 +14,30 @@ namespace WinformApp
 {
     public partial class frmMarcaMostrar : Form
     {
+        private List<Marca> listaMarcas;
         public frmMarcaMostrar()
         {
             InitializeComponent();
         }
 
+        public frmMarcaMostrar(List<Marca> marcas)
+        {
+            InitializeComponent();
+
+            listaMarcas = marcas;
+        }
         private void frmMarcaMostrar_Load(object sender, EventArgs e)
         {
-            MarcaNegocio negocio = new MarcaNegocio();
-            dgvMarcas.DataSource = negocio.listar();
+            if (listaMarcas == null)
+            {
+                MarcaNegocio negocio = new MarcaNegocio();
+                dgvMarcas.DataSource = negocio.listar();
+            }
+
+            else
+            {
+                dgvMarcas.DataSource = listaMarcas;
+            }
         }
     }
 }
