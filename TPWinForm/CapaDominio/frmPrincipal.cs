@@ -36,6 +36,12 @@ namespace WinformApp
             ventana.ShowDialog();
         }
 
+        private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmArticuloEliminar ventana = new frmArticuloEliminar();
+            ventana.ShowDialog();
+        }
+
         //CATEGORÍA
         private void mostrarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
@@ -104,11 +110,13 @@ namespace WinformApp
             Application.Exit();
         }
 
+
         private void modificarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmArticuloModificar ventana = new frmArticuloModificar();
             ventana.ShowDialog();
         }
+
     }
 
 }
