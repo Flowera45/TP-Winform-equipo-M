@@ -63,5 +63,37 @@ namespace WinformApp
                 MessageBox.Show("Ocurrió un error: " + ex.Message);
             }
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            ArticuloNegocio negocio = new ArticuloNegocio();
+            ImagenNegocio ImgNegocio = new ImagenNegocio();
+            Articulo seleccionado;
+            try
+            {
+                DialogResult confirmacion = MessageBox.Show("¿Está seguro de que desea eliminar este artículo?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (confirmacion == DialogResult.Yes)
+                {
+
+                    seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+
+                    ImgNegocio.eliminar(seleccionado.Id);
+
+                    negocio.eliminar(seleccionado.Id);
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Cancel;
+            Close();
+        }
     }
 }
