@@ -103,6 +103,12 @@ namespace WinformApp
         {
             Application.Exit();
         }
+
+        private void modificarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmArticuloModificar ventana = new frmArticuloModificar();
+            ventana.ShowDialog();
+        }
     }
 
 }

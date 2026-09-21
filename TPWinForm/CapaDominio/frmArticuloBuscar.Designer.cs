@@ -223,7 +223,7 @@
             this.Controls.Add(this.lblCodigo);
             this.Controls.Add(this.btnBucar);
             this.Name = "frmArticuloBuscar";
-            this.Text = "frmArticuloBuscar";
+            this.Text = "Buscar Articulo";
             this.Load += new System.EventHandler(this.frmArticuloBuscar_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
