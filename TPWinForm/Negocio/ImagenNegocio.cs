@@ -73,7 +73,7 @@ namespace Negocio
             try
             {
 
-                datos.setearConsulta("Detele from IMAGENES Where idarticulo = @idarticulo");
+                datos.setearConsulta("Delete from IMAGENES Where idarticulo = @idarticulo");
                 datos.setearParametro("@idarticulo", idarticulo);
                 datos.ejecutarAccion();
 

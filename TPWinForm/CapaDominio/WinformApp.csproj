@@ -61,6 +61,12 @@
     <Compile Include="frmArticuloBuscar.Designer.cs">
       <DependentUpon>frmArticuloBuscar.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmArticuloEliminar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmArticuloEliminar.Designer.cs">
+      <DependentUpon>frmArticuloEliminar.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmArticuloMostrar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,6 +146,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmArticuloBuscar.resx">
       <DependentUpon>frmArticuloBuscar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmArticuloEliminar.resx">
+      <DependentUpon>frmArticuloEliminar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmArticuloMostrar.resx">
       <DependentUpon>frmArticuloMostrar.cs</DependentUpon>
