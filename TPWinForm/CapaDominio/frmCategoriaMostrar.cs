@@ -41,5 +41,10 @@ namespace WinformApp
                 dgvCategorias.DataSource = listaCategorias;
             }
         }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

@@ -130,8 +130,13 @@ namespace WinformApp
                 // la aplicación no se congela y mantiene el placeholder cargado en el paso 1.
             }
         }
-        
-        
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+
 
 
 

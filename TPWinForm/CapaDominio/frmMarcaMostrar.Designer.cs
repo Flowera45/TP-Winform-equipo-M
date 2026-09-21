@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.dgvMarcas = new System.Windows.Forms.DataGridView();
+            this.btnVolver = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMarcas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,11 +44,22 @@
             this.dgvMarcas.Size = new System.Drawing.Size(250, 250);
             this.dgvMarcas.TabIndex = 0;
             // 
+            // btnVolver
+            // 
+            this.btnVolver.Location = new System.Drawing.Point(87, 290);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(88, 23);
+            this.btnVolver.TabIndex = 1;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            // 
             // frmMarcaMostrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(274, 341);
+            this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.dgvMarcas);
             this.Name = "frmMarcaMostrar";
             this.Text = "Marcas";
@@ -60,5 +72,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvMarcas;
+        private System.Windows.Forms.Button btnVolver;
     }
 }

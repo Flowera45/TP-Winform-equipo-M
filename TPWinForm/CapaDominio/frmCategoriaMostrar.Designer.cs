@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.dgvCategorias = new System.Windows.Forms.DataGridView();
+            this.btnVolver = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategorias)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,11 +44,22 @@
             this.dgvCategorias.Size = new System.Drawing.Size(250, 250);
             this.dgvCategorias.TabIndex = 0;
             // 
+            // btnVolver
+            // 
+            this.btnVolver.Location = new System.Drawing.Point(92, 292);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(75, 23);
+            this.btnVolver.TabIndex = 1;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            // 
             // frmCategoriaMostrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(274, 341);
+            this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.dgvCategorias);
             this.Name = "frmCategoriaMostrar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -61,5 +73,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvCategorias;
+        private System.Windows.Forms.Button btnVolver;
     }
 }

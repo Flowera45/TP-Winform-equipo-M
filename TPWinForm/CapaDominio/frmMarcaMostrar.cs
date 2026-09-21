@@ -39,5 +39,10 @@ namespace WinformApp
                 dgvMarcas.DataSource = listaMarcas;
             }
         }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
