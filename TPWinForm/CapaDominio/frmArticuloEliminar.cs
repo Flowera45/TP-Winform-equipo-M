@@ -66,27 +66,29 @@ namespace WinformApp
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            ArticuloNegocio negocio = new ArticuloNegocio();
-            ImagenNegocio ImgNegocio = new ImagenNegocio();
-            Articulo seleccionado;
             try
             {
+                if (dgvArticulos.CurrentRow == null || dgvArticulos.CurrentRow.DataBoundItem == null)
+                {
+                    MessageBox.Show("Por favor, busque y seleccione un artículo primero.");
+                    return;
+                }
+
                 DialogResult confirmacion = MessageBox.Show("¿Está seguro de que desea eliminar este artículo?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
                 if (confirmacion == DialogResult.Yes)
                 {
+                    Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
 
-                    seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
-
-                    ImgNegocio.eliminar(seleccionado.Id);
-
+                    ArticuloNegocio negocio = new ArticuloNegocio();
                     negocio.eliminar(seleccionado.Id);
+
+                    MessageBox.Show("Artículo eliminado correctamente.");
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                MessageBox.Show("Ocurrió un error al eliminar: " + ex.Message);
             }
         }
 
